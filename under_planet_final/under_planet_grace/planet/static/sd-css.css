@@ -1,0 +1,554 @@
+#range {
+    width: 160px;
+    position: relative;
+    margin: 50px;
+    border: 0;
+    height: 2px;
+    background: #959799;
+    outline: none
+}
+
+#range .ui-slider-handle {
+    position: absolute;
+    margin: -3px 0 0 -9px;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+    background: #fff;
+    border: 0;
+    height: 18px;
+    width: 18px;
+    outline: none;
+    cursor: pointer
+}
+
+#range .ui-slider-handle:hover,
+#range .ui-slider-handle:focus {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1)
+}
+
+#range .ui-slider-range {
+    background: #007aff
+}
+
+#range #currentVal {
+    position: absolute;
+    font-size: 12px;
+    font-weight: 700;
+    color: #b8b8b8;
+    width: 160px;
+    text-align: center;
+    margin-top: -40px
+}
+
+.pickmeup {
+    background: #000;
+    border-radius: .4em;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    display: inline-block;
+    position: absolute;
+    touch-action: manipulation
+}
+
+.pickmeup * {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.pickmeup.pmu-flat {
+    position: relative
+}
+
+.pickmeup.pmu-hidden {
+    display: none
+}
+
+.pickmeup .pmu-instance {
+    display: inline-block;
+    height: 13.8em;
+    padding: .5em;
+    text-align: center;
+    width: 15em
+}
+
+.pickmeup .pmu-instance .pmu-button {
+    color: #eee;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none
+}
+
+.pickmeup .pmu-instance .pmu-today {
+    background: #17384d;
+    color: #88c5eb
+}
+
+.pickmeup .pmu-instance .pmu-button:hover {
+    background: transparent;
+    color: #88c5eb
+}
+
+.pickmeup .pmu-instance .pmu-not-in-month {
+    color: #666
+}
+
+.pickmeup .pmu-instance .pmu-disabled,
+.pickmeup .pmu-instance .pmu-disabled:hover {
+    color: #333;
+    cursor: default
+}
+
+.pickmeup .pmu-instance .pmu-selected {
+    background: #136a9f;
+    color: #eee
+}
+
+.pickmeup .pmu-instance .pmu-not-in-month.pmu-selected {
+    background: #17384d
+}
+
+.pickmeup .pmu-instance nav {
+    color: #eee;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    line-height: 2em
+}
+
+.pickmeup .pmu-instance nav *:first-child :hover {
+    color: #88c5eb
+}
+
+.pickmeup .pmu-instance nav .pmu-prev,
+.pickmeup .pmu-instance nav .pmu-next {
+    display: none;
+    height: 2em;
+    width: 1em
+}
+
+.pickmeup .pmu-instance nav .pmu-month {
+    width: 14em
+}
+
+.pickmeup .pmu-instance .pmu-years *,
+.pickmeup .pmu-instance .pmu-months * {
+    display: inline-block;
+    line-height: 3.6em;
+    width: 3.5em
+}
+
+.pickmeup .pmu-instance .pmu-day-of-week {
+    color: #999;
+    cursor: default
+}
+
+.pickmeup .pmu-instance .pmu-day-of-week *,
+.pickmeup .pmu-instance .pmu-days * {
+    display: inline-block;
+    line-height: 1.5em;
+    width: 2em
+}
+
+.pickmeup .pmu-instance .pmu-day-of-week * {
+    line-height: 1.8em
+}
+
+.pickmeup .pmu-instance:first-child .pmu-prev,
+.pickmeup .pmu-instance:last-child .pmu-next {
+    display: block
+}
+
+.pickmeup .pmu-instance:first-child .pmu-month,
+.pickmeup .pmu-instance:last-child .pmu-month {
+    width: 13em
+}
+
+.pickmeup .pmu-instance:first-child:last-child .pmu-month {
+    width: 12em
+}
+
+.pickmeup:not(.pmu-view-days) .pmu-days,
+.pickmeup:not(.pmu-view-days) .pmu-day-of-week,
+.pickmeup:not(.pmu-view-months) .pmu-months,
+.pickmeup:not(.pmu-view-years) .pmu-years {
+    display: none
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vmin
+}
+
+.object {
+    border-radius: 999px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0
+}
+
+.p-orbit,
+#m-orbit:not(.object) {
+    border: 1px solid #fff;
+    background: transparent
+}
+
+.preview_img-main[selected_poster=white_circled] .p-orbit,
+.preview_img-main[selected_poster=white_circled] #m-orbit,
+.preview_img-main[selected_poster=White] .p-orbit,
+.preview_img-main[selected_poster=White] #m-orbit {
+    border-color: #000
+}
+
+#belt {
+    height: 22vmin;
+    width: 23vmin;
+    animation: spin 50s infinite linear
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0)
+    }
+
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+#m-orbit {
+    height: 4vmin;
+    width: 4vmin
+}
+
+.planet,
+#moon,
+#mars_moon1,
+#mars_moon2,
+.m_jupi,
+.s_jupi,
+.u_jupi,
+.n_jupi {
+    z-index: 100
+}
+
+.m_jupi,
+.s_jupi,
+.u_jupi,
+.n_jupi {
+    border-radius: 50%
+}
+
+#sun {
+    height: 3.75vmin;
+    width: 3.75vmin
+}
+
+#mars_moon1,
+#mars_moon2 {
+    background-color: #9d9a97;
+    box-shadow: inset -1px -1px 1px #0000007f
+}
+
+#mars_moon1 {
+    height: 3px;
+    width: 3px;
+    background-color: #fff;
+    border-radius: 50%
+}
+
+#mars_moon2 {
+    height: 2px;
+    width: 2px;
+    background-color: #fff
+}
+
+#moon {
+    height: .8vmin
+}
+
+#mercury {
+    height: 1.1vmin
+}
+
+#venus {
+    height: 1.2vmin
+}
+
+#earth {
+    height: 1.4vmin
+}
+
+#mars {
+    height: 1.5vmin
+}
+
+#jupiter {
+    height: 2vmin
+}
+
+#saturn {
+    height: 3vmin;
+    border-radius: 0%
+}
+
+#uranus {
+    height: 1.8vmin
+}
+
+#neptune {
+    height: 1.6vmin
+}
+
+#pluto {
+    height: .95vmin
+}
+
+#arrow {
+    display: none;
+    height: 3vmin;
+    width: 3vmin;
+    cursor: pointer;
+    z-index: 100
+}
+
+#zodiac,
+#monthWheel {
+    width: 53vmin;
+    height: 53vmin
+}
+
+.poster_image {
+    -webkit-transform: rotate(13deg);
+    -moz-transform: rotate(13deg);
+    -ms-transform: rotate(13deg);
+    -o-transform: rotate(13deg);
+    transform: rotate(13deg)
+}
+
+#zodiac,
+#monthWheel {
+    -webkit-transform: rotate(-13deg);
+    -moz-transform: rotate(-13deg);
+    -ms-transform: rotate(-13deg);
+    -o-transform: rotate(-13deg);
+    transform: rotate(-13deg)
+}
+
+.adjustPanel {
+    color: #fff;
+    padding-left: 2em
+}
+
+.datePanel {
+    position: absolute;
+    right: 1em;
+    top: 1em
+}
+
+.datePanel #currentYear {
+    color: #fff;
+    font-size: 2em;
+    cursor: pointer
+}
+
+.moonPanel {
+    position: absolute;
+    color: #fff;
+    line-height: 1;
+    left: 0;
+    right: 0;
+    bottom: 26vmin;
+    margin-right: 32vmin;
+    z-index: 1;
+    text-align: center
+}
+
+.moonPanel svg {
+    width: 6vmin;
+    height: 6vmin
+}
+
+#currentDate {
+    background-color: #000;
+    color: #fff;
+    font-size: 1.8em;
+    width: 6em;
+    text-align: center;
+    border: none;
+    cursor: pointer
+}
+
+.inline_field .input_with-img .day,
+.inline_field .input_with-img .month,
+.inline_field .input_with-img .year {
+    background-color: #242a32;
+    border-bottom: "1px solid white";
+    border-radius: 0;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    border-color: #fff;
+    margin-right: 5px
+}
+
+div#dayChart {
+    position: absolute;
+    line-height: 1;
+    letter-spacing: .04em;
+    max-width: 50vmin;
+    text-align: center;
+    bottom: 17vmin;
+    font-size: .5vw;
+    align-items: center;
+    min-width: 40vmin;
+    color: #fff9
+}
+
+.preview_img-main[selected_poster=White] div#dayChart,
+.preview_img-main[selected_poster=black_circled] div#dayChart {
+    color: #0009
+}
+
+#dayChart>div {
+    flex: 1
+}
+
+#dayChart .location {
+    display: flex;
+    flex-flow: column
+}
+
+#dayChart {
+    display: none
+}
+
+.moonPhase {
+    text-align: left
+}
+
+.temparature {
+    text-align: right
+}
+
+.buttonload {
+    background-color: #04aa6d;
+    border: none;
+    color: #fff;
+    padding: 12px 24px;
+    font-size: 16px
+}
+
+.add-to-cart-loader {
+    display: none
+}
+
+#fadeMe {
+    display: none;
+    background-color: #000c;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    position: fixed
+}
+
+.fadeMe_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding-left: 20px;
+    padding-right: 20px
+}
+
+.fadeMe_wrapper>h2 {
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 0;
+    text-align: center;
+    line-height: 1.5
+}
+
+#fadeMe h2 .loader {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 auto;
+    position: relative;
+    color: #fff;
+    left: -100px;
+    box-sizing: border-box;
+    animation: circle-movement 2s linear infinite;
+    vertical-align: 3px
+}
+
+@media (max-width:900px) {
+    .fadeMe_wrapper>h2 {
+        font-size: 20px
+    }
+
+    #fadeMe h2 .loader {
+        vertical-align: 2px
+    }
+}
+
+@media (max-width:640px) {
+    .fadeMe_wrapper>h2 {
+        font-size: 18px
+    }
+
+    #fadeMe h2 .loader {
+        width: 5px;
+        height: 5px
+    }
+}
+
+@keyframes circle-movement {
+    0% {
+        box-shadow: 0 0 #fff0, 0 0 #fff0, 0 0 #fff0, 0 0 #fff0
+    }
+
+    12% {
+        box-shadow: 100px 0 #fff, 0 0 #fff0, 0 0 #fff0, 0 0 #fff0
+    }
+
+    25% {
+        box-shadow: 110px 0 #fff, 100px 0 #fff, 0 0 #fff0, 0 0 #fff0
+    }
+
+    36% {
+        box-shadow: 120px 0 #fff, 110px 0 #fff, 100px 0 #fff, 0 0 #fff0
+    }
+
+    50% {
+        box-shadow: 130px 0 #fff, 120px 0 #fff, 110px 0 #fff, 100px 0 #fff
+    }
+
+    62% {
+        box-shadow: 200px 0 #fff0, 130px 0 #fff, 120px 0 #fff, 110px 0 #fff
+    }
+
+    75% {
+        box-shadow: 200px 0 #fff0, 200px 0 #fff0, 130px 0 #fff, 120px 0 #fff
+    }
+
+    87% {
+        box-shadow: 200px 0 #fff0, 200px 0 #fff0, 200px 0 #fff0, 130px 0 #fff
+    }
+
+    to {
+        box-shadow: 200px 0 #fff0, 200px 0 #fff0, 200px 0 #fff0, 200px 0 #fff0
+    }
+}
+
+/*# sourceMappingURL=/cdn/shop/t/11/assets/sd-css.css.map?v=134744289949845491351687860831 */

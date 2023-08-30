@@ -1,0 +1,25 @@
+from django.db import models
+
+class PlanetData(models.Model):
+    order_no = models.CharField(max_length=1000,default=True )
+    download_url = models.CharField(max_length=5000,default="" )
+    design = models.CharField(max_length=1000)
+    poster = models.CharField(max_length=1000)
+    pluto = models.BooleanField(default=True)
+    orbitline = models.BooleanField(default=True)
+    daychart = models.BooleanField(default=False) 
+    zodiacwheel = models.BooleanField(default=True)
+    moon = models.BooleanField(default=True)
+    datetime = models.CharField(max_length=1000,default=True)
+    locationselect = models.CharField(max_length=1000, default=True)
+    titletext = models.CharField(max_length=1000, blank=True, null=True)
+    defaultfnote = models.CharField(max_length=1000, blank=True, null=True)
+    specialmoment = models.CharField(max_length=1000, default=True)
+    size = models.CharField(max_length=1000,blank=True, null=True)
+    posteronly = models.CharField(max_length=1000, blank=True, null=True)
+    woodenframe = models.CharField(max_length=1000, blank=True, null=True)
+    matelframe = models.CharField(max_length=1000, blank=True, null=True)
+    hanger = models.CharField(max_length=1000, blank=True, null=True)
+    solarsystem_content = models.TextField(blank=True, null=True, editable=True)
+    selected_poster = models.CharField(max_length=1000, blank=True, null=True)
+
